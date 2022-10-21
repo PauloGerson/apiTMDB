@@ -1,6 +1,16 @@
 const constainer = document.querySelector('.container');
+const linkCategoria = document.querySelector(".action")
+const categoriaLink = [];
+ linkCategoria.addEventListener('click', categoria => {
+    categoria.preventDefault()
+     categoriaLink.push =  linkCategoria.childNodes[0].nodeValue
+     
+})
+
+
 //console.log(constainer)
 const films  = [];
+
 function criarImg(imgs,spans){
     const img = document.createElement('img')
     const span = document.createElement('span')
@@ -24,8 +34,7 @@ const urlApi = fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKe
         films.map(el => {
             console.log(el)
             for(let img of el){
-                criarImg(`${urlImg}${img.poster_path}`, img.title)
-                
+                criarImg(`${urlImg}${img.poster_path}`, img.title)              
             }
         })
         
