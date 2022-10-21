@@ -25,7 +25,7 @@ function criarImg(imgs,spans){
     
 }
 
-
+//aumentar time de resposta.
 const urlImg = `https://image.tmdb.org/t/p/w500`
 const apiKey = `cb4c98f66e1274d26140dd09a17f7a97`;
 const urlApi = fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`).then(resolve =>{
