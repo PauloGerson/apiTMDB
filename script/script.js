@@ -28,16 +28,19 @@ function criarImg(imgs,spans){
 //aumentar time de resposta.
 const urlImg = `https://image.tmdb.org/t/p/w500`
 const apiKey = `cb4c98f66e1274d26140dd09a17f7a97`;
-const urlApi = fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`).then(resolve =>{
-    resolve.json().then(data => {
-        films.push(data.results)
-        films.map(el => {
+
+const urlApi = fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
+    .then( (resolve) => resolve.json())
+    .then((data) => {
+        films.push(data.results);
+        films.map((el) => {
             console.log(el)
             for(let img of el){
-                criarImg(`${urlImg}${img.poster_path}`, img.title)              
+                console.log(`${urlImg}${img.poster_path}`)
+                criarImg(`${urlImg}${img.poster_path}`, img.title)
             }
         })
-        
     })
-})
+
+    
 
